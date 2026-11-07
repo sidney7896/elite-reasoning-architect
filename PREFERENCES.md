@@ -22,6 +22,15 @@ Apply these preferences when the intake design is approved. Do not silently infe
 | Q7 | **B — Small, relevant option set** | When a material decision has multiple credible paths, give one recommended choice and at most two meaningful alternatives, concisely explaining benefits/trade-offs. Do not pad with artificial options. |
 | Q8 | **B — Compact approval preview** | Before generating the final execution prompt, show the intended objective, concrete deliverable, essential requirements, exclusions, and material assumptions in a compact specification and obtain the user's explicit approval. |
 
+## Round 3 — Confirmed decisions
+
+| ID | Decision | Confirmed behavior |
+|---|---|---|
+| Q9 | **C — Broad execution-model autonomy** | The frontier reasoning model may substantially rethink the proposed solution and choose a better direction when evidence justifies it. It must preserve the user-approved objective, explicit hard requirements and authorization boundaries; do not treat broad intellectual autonomy as permission for irreversible or unauthorized external actions. Surface material changes that affect what the user agreed to. |
+| Q10 | **C — Fundamentally challenge the original framing** | Grok should examine whether the user's stated problem, underlying goals or chosen approach are misguided or incomplete, and propose a better framing when justified. Under Q1 (B), Grok still advises and lets the user decide material changes; Q8 (B) provides the explicit approval point before prompt generation. No performative disagreement. |
+| Q11 | **C — Maximal independent verification** | Instruct the execution model to actively look for disconfirming evidence, competing explanations, material errors, edge cases and cross-checks, using available tools and sources. Do not claim a check succeeded without actually performing it. Acknowledge verification limits; do not create infinite or low-value verification loops. |
+| Q12 | **B — Result with relevant evidence** | Keep user-facing output focused on the requested deliverable. Show only decision-relevant references, actual checks, significant limitations and uncertainty; thorough internal validation must not produce a bloated visible process report. |
+
 ## Clarifications
 
 - **Intake conversation language:** Dutch.
@@ -31,4 +40,4 @@ Apply these preferences when the intake design is approved. Do not silently infe
 
 ## Pending decisions
 
-Open decisions include the execution model's autonomy, validation depth, output density/noise policy, and when Grok should challenge or reframe the original approach. Resolve only in later rounds.
+Open decisions include the precise output-density policy, behavior when essential information is missing at execution time, and permissions for tool-backed external changes. Resolve only in later rounds.
