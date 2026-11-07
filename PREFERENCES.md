@@ -1,8 +1,8 @@
 # Personalization decisions — draft
 
-Status: **in progress; consolidated specification not yet approved; not approved for merge**.
+Status: **Specification approved for implementation on 2026-11-07; review and separate merge approval pending**.
 Source: explicit user choices during the Matt Pocock–style design interview and requested specification amendments.
-Apply these preferences when the intake design is approved. Do not silently infer unsettled choices. References to Grok in earlier rounds describe the initial candidate intake agent, not a platform restriction.
+These preferences are approved acceptance criteria. Do not silently change settled choices. References to Grok in earlier rounds describe the initial candidate intake agent, not a platform restriction.
 
 ## Round 1 — Confirmed decisions
 
@@ -47,13 +47,13 @@ Apply these preferences when the intake design is approved. Do not silently infe
 | Q17 | **C — Extensive research dossier** | Transfer a thorough, source-traceable research dossier containing material evidence, source links, important uncertainty, and rejected alternatives or counter-evidence where useful. Keep the final execution prompt standalone and lean: prefer a separately identifiable Markdown dossier as a supporting attachment when volume warrants it. Do not present unverified source access or research as completed. |
 | Q18 | **B — Standalone prompt plus explicit attachments** | The final prompt must clearly specify which original files and supporting dossier, if any, the execution model should receive, and which questions to answer from them. Preserve original files rather than attempting to compress entire large documents into the prompt. Clearly identify missing or inaccessible attachments. |
 
-## Requested specification amendments — awaiting consolidated approval
+## Approved specification amendments — 2026-11-07
 
 ### A. Two-stage architecture, no vendor lock-in
 
 - The system is **Intake & Prompt Architect → Frontier Reasoning Executor**, not "Grok → Astra Pro". The intake role can run on **any fast, intelligent AI with sufficient repository, research, and conversation capabilities**; Grok is the current use case, not a dependency.
 - The execution role can run on **any exceptionally capable reasoning model**. The execution prompt must be self-contained and independent of both vendor ecosystems.
-- Replace Grok-specific wording in `README.md`, `INTAKE.md`, `PROMPT_ENGINEERING.md`, `QUALITY_GATES.md`, and other operational material when implementation is approved. No wholesale operational migration before approval.
+- Use provider-neutral language throughout operational documents. Retain earlier Grok references here only as historical records of decisions.
 - Intake remains in Dutch; the final **execution prompt is always English** and by default specifies **Dutch user-facing output**. Keep this distinction explicit.
 
 ### B. Permanent first-message prompt in GitHub
@@ -61,7 +61,7 @@ Apply these preferences when the intake design is approved. Do not silently infe
 - Maintain exactly one canonical, copy-ready first-message prompt in [`STARTER.md`](STARTER.md). It must work across intake AI products and mention `@GitHub` only as an optional connector, not a required syntax.
 - The initial prompt points to this repository as the authoritative personal specification, names the needed instruction files, verifies actual read access, and tells the intake agent not to perform the downstream task.
 - Keep `STARTER.md` short by linking to richer references rather than copying full instructions. An English starter prompt is appropriate, but its conversation with the user must be in Dutch.
-- During draft review, users can test against this branch. After approval, the canonical prompt should read the default `main` branch; avoid permanently pinning a draft branch.
+- The canonical release starter reads `main`. Until merged, tests targeting unreleased changes must explicitly use `personalization-intake`.
 
 ### C. Entire Matt Pocock skills repository as a **discoverable library**
 
@@ -86,13 +86,13 @@ External reference: https://github.com/mattpocock/skills
 - **Intake conversation language:** Dutch.
 - **Generated execution prompt language:** always English; this supersedes the prior adaptive-language option.
 - **Language of the execution model's final deliverable:** Dutch by default, explicit user preference overrides. Preserve original language where essential (e.g. code, identifiers, quoted sources, data).
-- **No merge or activation yet:** further interview rounds may refine this specification; apply as a coherent set after explicit approval.
+- **Specification approved; merge not approved:** implementation is authorized on `personalization-intake` and may be proposed in a PR, but `main` remains unchanged until a separate explicit merge authorization.
 
 ## Pending decisions
 
-No further material decisions are currently identified after the additional requests. **Await user review and approval of this revised consolidated specification before implementing it across the operational instructions or merging.**
+No material design decisions remain open. The user approved implementation on `personalization-intake` and creation of one consolidated PR on 2026-11-07. This is **not** authorization to merge into `main`.
 
-## Proposed reconciliations for approval
+## Approved reconciliation rules
 
 - **Q1 + Q10:** Grok can challenge goals and propose fundamental reframing, but the user chooses material changes before prompt generation.
 - **Q6 + Q11:** Grok verifies factual premises and produces a research dossier; the execution model independently checks critical claims rather than trusting the dossier blindly.
