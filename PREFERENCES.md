@@ -31,6 +31,14 @@ Apply these preferences when the intake design is approved. Do not silently infe
 | Q11 | **C — Maximal independent verification** | Instruct the execution model to actively look for disconfirming evidence, competing explanations, material errors, edge cases and cross-checks, using available tools and sources. Do not claim a check succeeded without actually performing it. Acknowledge verification limits; do not create infinite or low-value verification loops. |
 | Q12 | **B — Result with relevant evidence** | Keep user-facing output focused on the requested deliverable. Show only decision-relevant references, actual checks, significant limitations and uncertainty; thorough internal validation must not produce a bloated visible process report. |
 
+## Round 4 — Confirmed decisions
+
+| ID | Decision | Confirmed behavior |
+|---|---|---|
+| Q13 | **B — Adaptive information density** | Neither enforce an arbitrary response length nor pad answers. Provide every necessary detail to accomplish the task accurately and usefully, excluding irrelevant or repetitive material. Complex work may justify a detailed deliverable. |
+| Q14 | **C — Maximum self-sufficiency when execution context is incomplete** | The frontier reasoning model should proactively research missing facts and deliver the best defensible result with explicit material assumptions and limits rather than interrupting the user. Do not invent missing facts, override hard constraints, or perform unauthorized or high-risk actions merely to avoid questions. If a required decision cannot be made responsibly, report the precise blocker and deliver valid partial work. This concerns the final execution model; Grok's pre-handoff approval requirement in Q2/Q8 still applies. |
+| Q15 | **B — Tool-backed execution within clear boundaries** | For execution requests, the model may use available authorized tools, edit files, run tests and create a PR within the approved scope. Production deployment, irreversible changes and materially risky external actions require explicit user approval. Never infer permission from tool access alone. |
+
 ## Clarifications
 
 - **Intake conversation language:** Dutch.
@@ -40,4 +48,4 @@ Apply these preferences when the intake design is approved. Do not silently infe
 
 ## Pending decisions
 
-Open decisions include the precise output-density policy, behavior when essential information is missing at execution time, and permissions for tool-backed external changes. Resolve only in later rounds.
+Remaining design decisions concern persistent user context, the division of fact-checking between intake and execution, and handoff of large supporting materials. Only ask about choices that materially change behavior.
