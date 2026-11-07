@@ -48,3 +48,17 @@ Matt Pocock's **entire current skills repository is discoverable**, not mandator
 A GitHub URL or `@GitHub` mention does **not** ensure that an intake agent has actually retrieved the files. Verify retrieval; if unavailable, identify the missing documents and request an accessible copy rather than inventing their contents.
 
 Use the default branch for the released starter. While reviewing changes on another branch, explicitly load that branch instead; unmerged files are not the active production instructions.
+
+## Try the unmerged candidate
+
+You can test the framework without merging PR #2. In a new intake-agent conversation, copy the prompt in [`STARTER.md`](STARTER.md), but substitute its repository URL with [`personalization-intake`](https://github.com/sidney7896/elite-reasoning-architect/tree/personalization-intake) and make the agent retrieve **every governing file from that branch**. A default-branch link would load the older framework instead. Verify read access before starting the actual intake. Give explicit approval to the compact specification, then send the final English prompt and named attachments to a separate frontier reasoning model.
+
+This is a preview, not evidence that the target host has passed behavioral testing.
+
+## Changes, releases and version history
+
+- [`CHANGELOG.md`](CHANGELOG.md): user-visible changes grouped by proposed version.
+- [`RELEASES.md`](RELEASES.md): release/version ledger, approval status, release links, and versioning conventions.
+- [`VERSION`](VERSION): single-line candidate version, currently `0.1.0-rc.1` on this branch.
+
+Update the changelog for substantive future changes; update the version and release register when assigning or promoting a version. GitHub tags, Releases, or merges require separate explicit authorization. None are implied by the preview candidate.
