@@ -1,5 +1,13 @@
 # Validation and audit disposition
 
+## Observed structural verification — 2026-11-07
+
+The reviewer retrieved the **actual `personalization-intake` contents** from GitHub and executed 12 JavaScript contract assertions against them: **12/12 passed**. The assertions cover all 18 recorded decisions, approval, language, user choices, hard constraints, factual attribution, action permissions, dossier/attachments, selective Matt skill discovery, provider neutrality, local Markdown links and correct test evidence limits.
+
+The same read-only check identified three prior contradictory strings on `main`: immediate prompt generation without approval (`INTAKE.md`), Dutch-by-default execution prompts (`README.md`) and a Grok-specific intake role (`README.md`). Those specific regressions are absent from the consolidated branch.
+
+A repeatable Node.js checker is committed at [`tests/check-framework.mjs`](tests/check-framework.mjs). **Its standalone Node command has not been run in this environment**; the equivalent assertions were run against GitHub-retrieved source text. No live Grok, other intake-host, or frontier-executor behavioral test has been performed during this consolidation.
+
 ## Scope of evidence
 
 **Static policy regression tests** can check structural consistency and catch known wording regressions. They **cannot establish** that any actual intake or frontier reasoning model will obey the policy.
