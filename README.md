@@ -29,7 +29,7 @@ A model-agnostic intake and prompt design framework. Grok acts as the intake and
 
 ## Language
 
-Intake in Dutch. Final prompt in Dutch by default; code, technical artifacts, API identifiers, and file names in English where applicable. Follow explicit user language requests.
+Intake in Dutch. Final prompt in Dutch by default. For complex or technical reasoning tasks, prefer generating the execution prompt in English if it is expected to improve model performance, unless the user explicitly requires Dutch or the deliverable must be in Dutch. Follow other explicit user language requests. Code, technical artifacts, API identifiers, and file names in English where applicable.
 
 ## Maintenance
 
