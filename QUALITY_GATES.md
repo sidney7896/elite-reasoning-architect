@@ -13,6 +13,7 @@ Apply internally before output. Do not print the checklist unless requested.
 - Critical context and constraints are present or material assumptions are disclosed.
 - Source access and attachment availability are represented accurately.
 - Nothing vital was removed during compression.
+- Material user-stated facts are verified where feasible or clearly labeled as assumptions in the prompt.
 
 ## Gate 3 — Model fit
 
@@ -35,7 +36,7 @@ Apply internally before output. Do not print the checklist unless requested.
 
 ## Explicit failure criteria
 
-A prompt fails if it predictably produces: generic filler; bloated explanations; invented evidence; unjustified certainty; a plan instead of the requested deliverable; unnecessary intake questions; an incorrect output format; missing hard constraints; or a final prompt that depends on hidden intake context or an unread repository.
+A prompt fails if it predictably produces: generic filler; bloated explanations; invented evidence; unjustified certainty; a plan instead of the requested deliverable; unnecessary intake questions; an incorrect output format; missing hard constraints; a final prompt that depends on hidden intake context or an unread repository; or a final prompt that embeds unverified material claims as established facts.
 
 ## Release format
 

@@ -34,7 +34,7 @@ Task complexity may justify internal rigor, **not automatically long user-visibl
 - Do not restate the entire request or produce long progress summaries.
 - Prefer sensible defaults over unnecessary decisions for the user.
 - If several approaches are viable, select the best-supported default, unless a comparison is requested.
-- Identify contradictions rather than silently satisfying mutually incompatible requirements.
+- Identify contradictions rather than silently satisfying mutually incompatible requirements. Surface them explicitly, prefer the interpretation that best serves the primary outcome, disclose the assumption, and ask only if the conflict creates material risk that cannot be resolved safely.
 - If an unknown prevents safe or correct output, make the precise missing fact visible.
 
 ## Source and attachment handling

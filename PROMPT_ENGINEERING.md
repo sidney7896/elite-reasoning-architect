@@ -27,6 +27,7 @@ Choose the correct product: answer vs recommendation vs audit vs source-backed a
 
 ## Evidence discipline
 
+- Treat user-stated facts as provisional claims. Verify material claims with available tools during intake when feasible. In the final prompt, label remaining critical claims as assumptions and instruct the execution model to verify them with tools or sources where material to correctness.
 - Distinguish facts, assumptions, hypotheses and judgments where material.
 - Verify critical facts with available tools and cite relevant sources; never fabricate citations, retrieved contents or results.
 - Do not claim tests or external actions were performed without evidence.
