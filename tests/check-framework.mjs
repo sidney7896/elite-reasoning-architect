@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, dirname } from 'node:path';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const names = ['README.md','PREFERENCES.md','INTAKE.md','PROMPT_ENGINEERING.md','QUALITY_GATES.md','STARTER.md','VALIDATION.md'];
+const names = ['README.md','PREFERENCES.md','INTAKE.md','PROMPT_ENGINEERING.md','QUALITY_GATES.md','STARTER.md','VALIDATION.md','CHANGELOG.md','RELEASES.md','VERSION'];
 const docs = Object.fromEntries(names.map(name => [name, readFileSync(resolve(root, name), 'utf8')]));
 const pref = docs['PREFERENCES.md'];
 const intake = docs['INTAKE.md'];
@@ -81,5 +81,14 @@ check('separate validation evidence and release limitations', () => {
   assert.match(docs['VALIDATION.md'], /live-model/i);
   assert.match(docs['VALIDATION.md'], /Static/i);
   assert.match(quality, /does not establish/i);
+});
+check('release and version log are consistent and not published', () => {
+  const version = docs['VERSION'].trim();
+  assert.match(version, /^\\d+\\.\\d+\\.\\d+(?:-rc\\.\\d+)?$/);
+  assert.ok(docs['CHANGELOG.md'].includes('['+version+']'));
+  assert.ok(docs['RELEASES.md'].includes('`'+version+'`'));
+  assert.match(docs['RELEASES.md'], /not published/i);
+  assert.match(readme, /\\[\`CHANGELOG\\.md\`\\]/);
+  assert.match(readme, /\\[\`RELEASES\\.md\`\\]/);
 });
 console.log('PASS '+pass+' structural contract checks');
