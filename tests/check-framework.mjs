@@ -33,7 +33,7 @@ check('English execution prompt and Dutch output are separate', () => {
   assert.match(intake, /\*\*English\*\* standalone prompt/i);
   assert.match(prompt, /standalone, model-agnostic English prompt/i);
   assert.match(quality, /entirely in English/i);
-  assert.match(prompt, /Dutch final user-facing result/i);
+  assert.match(prompt, /user-facing result in Dutch/i);
 });
 check('canonical starter points to main, not the review branch', () => {
   const block = starter.match(/```text\n([\s\S]*?)```/);
