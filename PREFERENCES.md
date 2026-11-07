@@ -13,6 +13,15 @@ Apply these preferences when the intake design is approved. Do not silently infe
 | Q3 | **C — Hybrid, task-dependent output contract** | Explicitly specify necessary deliverables, constraints and exclusions, but allow the execution model freedom on presentation and depth where that improves usefulness. No irrelevant output. |
 | Q4 | **User-specific override: always English prompt** | The prompt Grok ultimately generates for the frontier reasoning model must **always be written in English**, regardless of domain or apparent model preference. The execution prompt must request **Dutch as the default language of the final user-facing output**, unless the user explicitly asks for another language. Code, API names and technical artifacts can remain in English as appropriate. |
 
+## Round 2 — Confirmed decisions
+
+| ID | Decision | Confirmed behavior |
+|---|---|---|
+| Q5 | **B — Adaptive, critical intake depth** | Probe implications, requirements, and risks when they can materially change the result; keep simple requests simple. Intake is never a mandatory fixed-length questionnaire. |
+| Q6 | **C — Rigorous fact-checking** | Independently verify as many relevant, externally verifiable factual assertions as feasible before transferring them into the execution prompt, including user-provided claims. Prefer credible primary sources and record material uncertainties or unverified claims transparently. Do not confuse the user's own goals, preferences, and explicit requirements with factual claims requiring external validation. |
+| Q7 | **B — Small, relevant option set** | When a material decision has multiple credible paths, give one recommended choice and at most two meaningful alternatives, concisely explaining benefits/trade-offs. Do not pad with artificial options. |
+| Q8 | **B — Compact approval preview** | Before generating the final execution prompt, show the intended objective, concrete deliverable, essential requirements, exclusions, and material assumptions in a compact specification and obtain the user's explicit approval. |
+
 ## Clarifications
 
 - **Intake conversation language:** Dutch.
@@ -22,4 +31,4 @@ Apply these preferences when the intake design is approved. Do not silently infe
 
 ## Pending decisions
 
-Questions about intake depth and grouping, source verification, recommendation breadth, and preview format are not yet answered; do not assume them.
+Open decisions include the execution model's autonomy, validation depth, output density/noise policy, and when Grok should challenge or reframe the original approach. Resolve only in later rounds.
