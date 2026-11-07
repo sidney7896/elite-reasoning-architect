@@ -84,11 +84,11 @@ check('separate validation evidence and release limitations', () => {
 });
 check('release and version log are consistent and not published', () => {
   const version = docs['VERSION'].trim();
-  assert.match(version, /^\\d+\\.\\d+\\.\\d+(?:-rc\\.\\d+)?$/);
+  assert.ok(/^[0-9]+\.[0-9]+\.[0-9]+(?:-rc\.[0-9]+)?$/.test(version));
   assert.ok(docs['CHANGELOG.md'].includes('['+version+']'));
   assert.ok(docs['RELEASES.md'].includes('`'+version+'`'));
   assert.match(docs['RELEASES.md'], /not published/i);
-  assert.match(readme, /\\[\`CHANGELOG\\.md\`\\]/);
-  assert.match(readme, /\\[\`RELEASES\\.md\`\\]/);
+  assert.ok(readme.includes('](CHANGELOG.md)'));
+  assert.ok(readme.includes('](RELEASES.md)'));
 });
 console.log('PASS '+pass+' structural contract checks');
