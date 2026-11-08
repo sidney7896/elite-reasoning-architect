@@ -29,6 +29,7 @@ Apply privately before releasing the execution prompt. These checks validate the
 - The output contract includes necessary detail, relevant evidence and meaningful uncertainty, but no arbitrary length, filler, ceremonial process narration or unrelated appendices.
 - Original required attachments are named with their purpose and actual availability; a sufficiently substantial research effort yields a separately usable, source-traceable dossier.
 - No unsupported claim is made that a native skill, tool, background agent, test or repository operation was executed.
+- For substantial Pro/frontier deliverables, the output contract follows the user's **visual-first** preference and selects premium interactive HTML where useful and supported; explicit requested formats and the no-noise rule override any automatic HTML creation.
 
 ## Gate 5 — Safety and finish
 
