@@ -8,6 +8,17 @@ This log records material changes to behavior, user preferences, instruction doc
 
 Changes after the current candidate belong here until a version is assigned. No additional release is claimed by this section.
 
+## [0.1.0-rc.2] — 2026-11-08 (candidate; not released)
+
+### Changed
+- Added the user's explicit **visual-first Pro/frontier output preference**: premium interactive HTML as the default format for substantial research, process blueprints, architectural reports and audits when supported and helpful; compact visuals instead for simple questions or unavailable artifact tooling.
+- Added optional, task-scoped design reference to the private `premium-interactieve-interface@0.1.0` prompt without auto-activating it, transferring credentials, or requiring downstream access.
+- Updated output engineering, quality gates, README, and structural checks to honor the preference alongside Dutch final output, English execution prompts and minimal noise.
+
+### Verification and release status
+- Candidate documentation-only update; **not a new published release**, and behavioral gains on the target host are not claimed.
+- PR #2 remains the review vehicle; merge still requires explicit approval.
+
 ## [0.1.0-rc.1] — 2026-11-07 (candidate; not released)
 
 ### Added
