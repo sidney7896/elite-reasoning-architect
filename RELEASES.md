@@ -6,6 +6,7 @@ This is the source of truth for **version chronology, status, release references
 
 | Version | Date | Source / commit | Status | Review / release reference |
 |---|---|---|---|---|
+| `0.1.0-rc.2` | 2026-11-08 | `personalization-intake` (commit recorded in PR #2) | **Release candidate — not published** | [PR #2](https://github.com/sidney7896/elite-reasoning-architect/pull/2); visual-first preference added; target-host checks pending |
 | `0.1.0-rc.1` | 2026-11-07 | `personalization-intake` (commit recorded in PR #2) | **Release candidate — not published** | [PR #2](https://github.com/sidney7896/elite-reasoning-architect/pull/2); target-host validation pending |
 | Unversioned baseline | 2026-11-07 snapshot | `main` @ `c8236e0546ffad65462f732eed210486508fdf9f` | Current baseline, not a new release | Existing baseline before PR #2 |
 
