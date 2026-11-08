@@ -1,49 +1,47 @@
-# Model-agnostic reasoning prompt engineering
+# Stage B — Frontier reasoning prompt construction
 
-## Design principle
+Create a **standalone, model-agnostic English prompt** that a separate exceptionally capable reasoning model can execute. Reflect the **approved task specification**, not an unapproved guess about the user's goals. Read [`PREFERENCES.md`](PREFERENCES.md) for settled priorities.
 
-Specify the intended outcome, the relevant evidence/context, constraints, permitted autonomy and a concrete output contract. Give powerful models freedom to choose an appropriate analytical method; do not micromanage hidden reasoning or request chain-of-thought transcripts.
+## What the execution prompt must convey
 
-## Build the final prompt
+Include the following **only to the extent the task needs them**, in a structure that serves the deliverable rather than a rigid universal template:
 
-Include only as needed:
+1. **Outcome and acceptance criteria:** the actual job and the concrete end product (answer, decision, audit, code, working artifact, etc.). Do not deliver a plan when implementation was requested.
+2. **Relevant context with provenance:** facts the intake verified (and citations), user-reported claims that remain unverified, material assumptions, critical counter-evidence and unresolved uncertainty.
+3. **Boundaries:** approved scope, hard constraints, excluded actions, available tools (only if actually known), confidential-data boundaries and explicit approval requirements for risky, production or irreversible external changes.
+4. **Reasoning autonomy:** allow the executor to select methods, subproblems, research approaches and even a substantially better solution direction **within the approved goal and hard boundaries**. It may change implementation details without asking; it must disclose a material departure from what the user approved and obtain approval when the goal, hard scope or authorization would change.
+5. **Independent verification:** actively seek disconfirming evidence, check critical claims and calculations with available tools, test important edge cases, and distinguish observation from inference. Check dossier claims independently when material. State what could not be checked; never invent tests or sources. Stop investigating when additional work is unlikely to change the outcome, while preserving high-stakes rigor.
+6. **Missing information:** proactively find reliable information, make explicitly attributed defensible assumptions where safe, and continue autonomously. Ask only when a user-only authorization or decision is indispensable. Otherwise produce the best valid partial result, with the specific blocker and its consequence.
+7. **Output contract:** request the final **user-facing result in Dutch** by default (unless the user specified otherwise). Demand all decision- or task-essential details, but exclude irrelevant preambles, repetitions, arbitrary option counts, boilerplate and private reasoning transcripts. Show meaningful evidence, actual checks, limits and uncertainty — **not the full internal research process**.
 
-1. **Task and success:** what the model must accomplish and what a usable result looks like.
-2. **Relevant inputs:** succinct factual context, source materials, attachment references and known assumptions.
-3. **Boundaries:** non-negotiable constraints, in/out of scope, permissions, irreversible actions requiring approval.
-4. **Quality:** standards of evidence, uncertainty handling, verification, counterarguments and failure modes, tailored to stakes.
-5. **Output contract:** exact deliverable, presentation format, necessary depth, decision-oriented supporting information and unwanted output.
-6. **Completion conditions:** objective pass/fail criteria where feasible.
+The generated **instructions themselves are always English**, irrespective of task domain. Code, API names, data and exact source quotes may naturally remain in their own language.
 
-Do not force a seven-section prompt. Compress these into natural task instructions.
+## Evidence and claims
 
-## Output engineering
+Treat an externally verifiable user assertion as **user-reported until actually verified**; do not relabel a personal preference as a factual hypothesis. Where the executor must verify an unconfirmed important premise, say so in the prompt. Cite primary sources wherever available, and keep sources distinct from assumptions. Do not claim tools or references can be accessed by the executor unless those capabilities are known.
 
-The optimal response is the **shortest complete, accurate, decision-useful response**. Too much irrelevant material is a failure. Too little necessary detail is also a failure.
+## Dossier and original attachments
 
-Explicitly exclude when not needed: long introductions, restatement, generic best practices, redundant summaries, arbitrary number of options, decorative tables, irrelevant history, speculative add-ons, boilerplate disclaimers, praise, and narrated internal reasoning.
+For substantial investigation, transfer a **separate, thorough research dossier** with only relevant evidence, source URLs/identifiers, dates where material, disconfirming evidence, rejected alternatives, verification status and open questions. This is a supporting artifact, **not** a demand for a long user-facing final answer.
 
-Choose the correct product: answer vs recommendation vs audit vs source-backed analysis vs software artifact vs report vs implementation. Never substitute an implementation plan for a requested implementation.
+List original attachments explicitly by **identity, purpose and availability**. Instruct the executor to inspect original files itself where authorized, rather than relying on lossy summaries. A URL is not a substitute for access. Do not insert sensitive customer material into a public repository or a prompt destined for an unauthorized recipient.
 
-## Evidence discipline
+The English prompt must stand on its own even if the dossier and listed attachments are required inputs; it may name those artifacts precisely, but must not depend on the intake chat, undocumented model memory, this framework repository, or the Matt Pocock skills repository.
 
-- Distinguish facts, assumptions, hypotheses and judgments where material.
-- Verify critical facts with available tools and cite relevant sources; never fabricate citations, retrieved contents or results.
-- Do not claim tests or external actions were performed without evidence.
-- Highlight uncertainty only when it changes the decision or completeness.
-- Check alternatives, counterarguments, failure modes and edge cases proportionately to stakes.
-- Correct the user when the evidence supports correction; do not disagree performatively.
+## Visual-first output contract
 
-## Autonomy
+The user explicitly prefers visually absorbable results. For **substantive** reports, audits, architecture designs, and process blueprints executed in ChatGPT Pro or similarly capable environments, ask for a **finished premium interactive HTML artifact as the default primary presentation**, where supported. The HTML must make the process, evidence, risk, and decisions easier to grasp, with details available through progressive disclosure and a brief Dutch takeaway. Treat accessibility, responsive layout, dark/light support, truthful data labels, and meaningful state transitions as quality requirements, not ornamental extras.
 
-Let the execution model choose sensible subproblems, verification methods and relevant tools. Avoid mandatory simulated councils, rigid step counts, '100% brain' claims, and predetermined frameworks. Specify authorization boundaries for irreversible, production, financial, privacy-sensitive or external actions.
+For trivial tasks or situations where HTML would create more noise than value, use an appropriately concise in-chat visual presentation. Honor any explicit user-requested alternative. Never substitute a promise or code outline for a requested artifact. If the executor has no file/artifact capability, specify the best available supported output instead of inventing a file.
 
-## Priority order
+When appropriate and accessible to Stage A, use the `premium-interactieve-interface@0.1.0` entry in the user's **private** `sidney7896/prompt-library` as a task-scoped design reference; distill requirements into the execution prompt rather than making that private repository a mandatory Stage B dependency. This is not a blanket activation of that prompt.
 
-Unless the user overrides a lower-priority preference: safety and hard constraints; truthfulness; goal completion; decision usefulness; appropriate depth; minimal noise; presentation.
+## Boundaries and efficiency
 
-## Handoff rules
+Broad intellectual autonomy does not create external permissions. Authorized task-scoped edits, local tests and PR creation are allowed **only when the user requested execution and the necessary tools and permissions actually exist**. Production deployment, destructive/irreversible changes and materially risky external actions require separate explicit user approval.
 
-The final prompt must **stand alone**. Do not refer the execution model to this repository, an unavailable Grok conversation, or implied hidden attachments. Include the relevant distilled constraints directly. Specify required attachments by name or description, without pretending their contents are known.
+Do not force synthetic multi-agent teams, arbitrary thinking-step counts, hidden chain-of-thought disclosure or ornamental role claims. Optimize for the shortest **complete and accurate** answer, not the shortest possible answer.
 
-During intake, don't attempt the final task. The user explicitly has a separate execution model. Only perform the task directly if requested.
+## Release
+
+After the intake specification is approved and all [`QUALITY_GATES.md`](QUALITY_GATES.md) checks pass, provide **one copyable Markdown code block containing the entire English execution prompt**. Include the separate dossier and exact list of necessary attachments outside the code block only when applicable. Do not execute Stage B during Stage A unless the user explicitly changes the assignment.
