@@ -34,7 +34,7 @@ The user explicitly prefers visually absorbable results. For **substantive** rep
 
 For trivial tasks or situations where HTML would create more noise than value, use an appropriately concise in-chat visual presentation. Honor any explicit user-requested alternative. Never substitute a promise or code outline for a requested artifact. If the executor has no file/artifact capability, specify the best available supported output instead of inventing a file.
 
-When appropriate and accessible to Stage A, use the `premium-interactieve-interface@0.1.0` entry in the user's **private** `sidney7896/prompt-library` as a task-scoped design reference; distill requirements into the execution prompt rather than making that private repository a mandatory Stage B dependency. This is **not** a blanket activation of that prompt.
+When appropriate and accessible to Stage A, use the `premium-interactieve-interface@0.1.0` entry in the user's **private** `sidney7896/prompt-library` as a task-scoped design reference; distill requirements into the execution prompt rather than making that private repository a mandatory Stage B dependency. This is not a blanket activation of that prompt.
 
 ## Boundaries and efficiency
 
