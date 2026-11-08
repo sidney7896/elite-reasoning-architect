@@ -59,6 +59,6 @@ This is a preview, not evidence that the target host has passed behavioral testi
 
 - [`CHANGELOG.md`](CHANGELOG.md): user-visible changes grouped by proposed version.
 - [`RELEASES.md`](RELEASES.md): release/version ledger, approval status, release links, and versioning conventions.
-- [`VERSION`](VERSION): single-line candidate version, currently `0.1.0-rc.1` on this branch.
+- [`VERSION`](VERSION): single-line candidate version, currently `0.1.0-rc.2` on this branch.
 
 Update the changelog for substantive future changes; update the version and release register when assigning or promoting a version. GitHub tags, Releases, or merges require separate explicit authorization. None are implied by the preview candidate.
