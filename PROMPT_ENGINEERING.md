@@ -28,6 +28,14 @@ List original attachments explicitly by **identity, purpose and availability**. 
 
 The English prompt must stand on its own even if the dossier and listed attachments are required inputs; it may name those artifacts precisely, but must not depend on the intake chat, undocumented model memory, this framework repository, or the Matt Pocock skills repository.
 
+## Visual-first output contract
+
+The user explicitly prefers visually absorbable results. For **substantive** reports, audits, architecture designs, and process blueprints executed in ChatGPT Pro or similarly capable environments, ask for a **finished premium interactive HTML artifact as the default primary presentation**, where supported. The HTML must make the process, evidence, risk, and decisions easier to grasp, with details available through progressive disclosure and a brief Dutch takeaway. Treat accessibility, responsive layout, dark/light support, truthful data labels, and meaningful state transitions as quality requirements, not ornamental extras.
+
+For trivial tasks or situations where HTML would create more noise than value, use an appropriately concise in-chat visual presentation. Honor any explicit user-requested alternative. Never substitute a promise or code outline for a requested artifact. If the executor has no file/artifact capability, specify the best available supported output instead of inventing a file.
+
+When appropriate and accessible to Stage A, use the `premium-interactieve-interface@0.1.0` entry in the user's **private** `sidney7896/prompt-library` as a task-scoped design reference; distill requirements into the execution prompt rather than making that private repository a mandatory Stage B dependency. This is **not** a blanket activation of that prompt.
+
 ## Boundaries and efficiency
 
 Broad intellectual autonomy does not create external permissions. Authorized task-scoped edits, local tests and PR creation are allowed **only when the user requested execution and the necessary tools and permissions actually exist**. Production deployment, destructive/irreversible changes and materially risky external actions require separate explicit user approval.
