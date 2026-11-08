@@ -91,4 +91,11 @@ check('release and version log are consistent and not published', () => {
   assert.ok(readme.includes('](CHANGELOG.md)'));
   assert.ok(readme.includes('](RELEASES.md)'));
 });
+check('visual-first Pro preference with optional premium HTML', () => {
+  assert.match(pref, /visual-first Dutch final deliverable/i);
+  assert.match(prompt, /finished premium interactive HTML artifact/i);
+  assert.match(prompt, /trivial tasks or situations where HTML would create more noise/i);
+  assert.match(quality, /visual-first/i);
+  assert.match(prompt, /not.*blanket activation/i);
+});
 console.log('PASS '+pass+' structural contract checks');
