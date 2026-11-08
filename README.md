@@ -10,7 +10,7 @@ A provider-independent, two-stage system for turning a user's request into a hig
 2. The intake agent loads this project's instructions, selectively consults relevant [Matt Pocock skills](https://github.com/mattpocock/skills), researches the request and discusses material decisions in Dutch.
 3. It presents a **compact task specification for the user's explicit approval**, even when no intake questions were needed.
 4. After approval, it delivers a **standalone English execution prompt**, a source-traceable research dossier where justified, and an exact list of original attachments to supply.
-5. The user submits these to a separate **Frontier Reasoning Executor** (any capable model), which completes the requested task. Its user-facing result is **Dutch by default**, unless the user requested otherwise.
+5. The user submits these to a separate **Frontier Reasoning Executor** (any capable model), which completes the requested task. Its user-facing result is **Dutch by default** and **visual-first** (premium interactive HTML for substantial deliverables when supported), unless the user requested otherwise.
 
 ## Files and authority
 
